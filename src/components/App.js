@@ -246,57 +246,58 @@ function App() {
   return (
     <div id="main">
       <div className="select-group">
-      <div>
-        <label>
-          States:{" "}
-          <select value={stateIndex} onChange={handleStateChange} id="state">
-            {states.map((state, index) => (
+        <div>
+          <label>
+            States:{" "}
+            <select value={stateIndex} onChange={handleStateChange} id="state">
+              {states.map((state, index) => (
+                <option key={index} value={index}>
+                  {state?.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>
+            Cities:{" "}
+            <select value={cityIndex} onChange={handleCityChange} id="city">
+              {selectedState?.city.map((city, index) => (
+                <option key={index} value={index}>
+                  {city?.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div>
+          <label>Landmarks: </label>
+          <select
+            value={ladmarkIndex}
+            onChange={handleLandmarkChange}
+            id="landmark"
+          >
+            {selectedCity?.landmarks.map((landmark, index) => (
               <option key={index} value={index}>
-                {state?.name}
+                {landmark?.name}
               </option>
             ))}
           </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Cities:{" "}
-          <select value={cityIndex} onChange={handleCityChange} id="city">
-            {selectedState?.city.map((city, index) => (
-              <option key={index} value={index}>
-                {city?.name}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>Landmarks:{" "} </label>
-        <select value={ladmarkIndex} onChange={handleLandmarkChange} id="landmark">
-          {selectedCity?.landmarks.map((landmark, index) => (
-            <option key={index} value={index}>{landmark?.name}</option>
-          ))}
-        </select>
-      </div>
-
+        </div>
       </div>
       <div className="info-container">
         <div id="state-name" className="title-container">
-          <h1>{selectedState?.name}</h1>
+          {selectedState?.name}
         </div>
-        <div id="state-description">
-          <p>{selectedState?.description}</p>
+        <div id="state-description">{selectedState?.description}</div>
+        <div id="city-name" className="title-container">
+          {selectedCity?.name}
         </div>
-        <div id="city-name" className="title-container"><h1>{selectedCity?.name}</h1></div>
-        <div id="city-description">
-          <p>{selectedCity?.description}</p>
-        </div>
+        <div id="city-description">{selectedCity?.description}</div>
         <div id="landmark-name" className="title-container">
-          <h1>{selectedLandmark?.name}</h1>
+          {selectedLandmark?.name}
         </div>
-        <div id="landmark-description">
-          <p>{selectedLandmark?.description}</p>
-        </div>
+        <div id="landmark-description">{selectedLandmark?.description}</div>
       </div>
     </div>
   );
