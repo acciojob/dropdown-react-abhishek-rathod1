@@ -44,3 +44,16 @@ button{
     margin: 20px;
     padding: 16px;
 }
+
+.info-container p{
+    font-size: 22px;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+select{
+    padding: 10px;
+}
+option{
+    background-color: grey;
+}
