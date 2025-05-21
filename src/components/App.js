@@ -281,17 +281,17 @@ function App() {
 
       </div>
       <div className="info-container">
-        <div id="state-title" className="title-container">
+        <div id="state-name" className="title-container">
           <h1>{selectedState?.name}</h1>
         </div>
         <div id="state-description">
           <p>{selectedState?.description}</p>
         </div>
-        <div id="city-title" className="title-container"><h1>{selectedCity?.name}</h1></div>
+        <div id="city-name" className="title-container"><h1>{selectedCity?.name}</h1></div>
         <div id="city-description">
           <p>{selectedCity?.description}</p>
         </div>
-        <div id="landmark-title" className="title-container">
+        <div id="landmark-name" className="title-container">
           <h1>{selectedLandmark?.name}</h1>
         </div>
         <div id="landmark-description">
